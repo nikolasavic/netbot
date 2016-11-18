@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/nikolasavic/netbot/issues"
   },
-  "homepage": "https://github.com/nikolasavic/netbot#readme"
+  "homepage": "https://github.com/nikolasavic/netbot#readme",
+  "dependencies": {
+    "botkit": "^0.4.1"
+  }
 }
