@@ -1,0 +1,24 @@
+{
+  "name": "netbot",
+  "version": "1.0.0",
+  "description": "netrunner slack bot",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikolasavic/netbot.git"
+  },
+  "keywords": [
+    "netrunner",
+    "slack",
+    "bot"
+  ],
+  "author": "Nikola Savic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nikolasavic/netbot/issues"
+  },
+  "homepage": "https://github.com/nikolasavic/netbot#readme"
+}
