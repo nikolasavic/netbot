@@ -1,6 +1,6 @@
-if (!process.env.token) {
-      console.log('Error: Specify token in environment');
-          process.exit(1);
+if (!process.env.TOKEN) {
+  console.log('Error: Specify token in environment');
+  process.exit(1);
 }
 
 var Botkit = require('botkit');
@@ -11,14 +11,14 @@ var controller = Botkit.slackbot({
 });
 
 var bot = controller.spawn({
-      token: process.env.token
+  token: process.env.TOKEN
 }).startRTM();
 
 controller.hears(['uptime', 'identify yourself', 'who are you', 'what is your name'],
                  'direct_message,direct_mention,mention,ambient', function(bot, message) {
 
-  var hostname = os.hostname();
-  var uptime = formatUptime(process.uptime());
+  var hostname = os.hostname(),
+      uptime = formatUptime(process.uptime());
 
   bot.reply(message,
             ':robot_face: I am a bot named <@' + bot.identity.name +
