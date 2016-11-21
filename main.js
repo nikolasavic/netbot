@@ -3,11 +3,14 @@ if (!process.env.TOKEN) {
   process.exit(1);
 }
 
-var Botkit = require('botkit');
-var os = require('os');
+var Botkit = require('botkit'),
+    os = require('os'),
+    mongoStorage = require('botkit-storage-mongo')({mongoUri: process.env.MONGODB_URI }),
+    fetchCardData = require('./lib/fetchCardData.js'),
+    search = require('./lib/search.js');
 
 var controller = Botkit.slackbot({
-      debug: true,
+  storage: mongoStorage,
 });
 
 var bot = controller.spawn({
