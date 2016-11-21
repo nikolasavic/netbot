@@ -17,6 +17,21 @@ var bot = controller.spawn({
   token: process.env.TOKEN
 }).startRTM();
 
+// On startup fetch and store card data frm api
+fetchCardData(controller, bot);
+
+controller.hears(['{{(.*)}}'],'direct_message,direct_mention,mention,ambient', function(bot, message){
+  var url,
+      title;
+
+  title = message.match[1];
+  controller.storage.teams.get('all_cards', function(err, data) {
+    url = search(data.data, title)
+    bot.reply(message, url);
+  });
+
+});
+
 controller.hears(['uptime', 'identify yourself', 'who are you', 'what is your name'],
                  'direct_message,direct_mention,mention,ambient', function(bot, message) {
 
